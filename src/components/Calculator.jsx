@@ -18,16 +18,16 @@ export function Calculator() {
         }
     }
 
-    function allClear() {
+    function allClean() {
         setResult(0)
     }
 
-    function clear() {
+    function clean() {
         if(result.length === 1) {
             setResult(0)
         }
         else {
-            setResult(...result)
+            setResult(result.substring(0, result.length - 1))
         }
     }
 
@@ -61,8 +61,8 @@ export function Calculator() {
     return (
         <div className="calculator-container">
             <h1 className="result-painel">{result}</h1>
-            <button className="all-clear" onClick={allClear}>AC</button>
-            <button className="operators" onClick={clear}>C</button>
+            <button className="all-clear" onClick={allClean}>AC</button>
+            <button className="all-clear" onClick={clean}>C</button>
             <button className="operators" onClick={porcentage}>%</button>
             <button className="operators" onClick={operatorHandler} value="/">/</button>
             <button onClick={inputNumber} value={7}>7</button>
