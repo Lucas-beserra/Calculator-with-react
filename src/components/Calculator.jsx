@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import './style.css'
 
-
-
 export function Calculator() {
     const [result, setResult] = useState(0)
     const [oldresult, setOldResult] = useState(0)
@@ -64,7 +62,7 @@ export function Calculator() {
         <div className="calculator-container">
             <h1 className="result-painel">{result}</h1>
             <button className="all-clear" onClick={allClear}>AC</button>
-            <button className="operators">{`( )`}</button>
+            <button className="operators" onClick={clear}>C</button>
             <button className="operators" onClick={porcentage}>%</button>
             <button className="operators" onClick={operatorHandler} value="/">/</button>
             <button onClick={inputNumber} value={7}>7</button>
@@ -81,7 +79,6 @@ export function Calculator() {
             <button className="operators" onClick={operatorHandler} value="+">+</button>
             <button onClick={inputNumber} value={0}>0</button>
             <button onClick={inputNumber} value={`.`}>.</button> 
-            <button onClick={clear}>D</button> 
             <button className="equals-operator" onClick={calculate}>=</button> 
         </div>
     )
